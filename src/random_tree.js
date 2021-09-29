@@ -9,7 +9,7 @@ class RandomTree {
     this.startY = this.canvas.height - 150
     this.angle = 0;
     // this.len = Math.floor(Math.random() * 100) + 80;
-    this.len = Math.random() * (195 - 120) + 120;
+    this.len = Math.random() * (150 - 120) + 120;
     this.branchWidth = Math.random() * 140 + 1;
     this.color1 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
@@ -48,24 +48,35 @@ class RandomTree {
     // const angleChange1 = Math.random() * 10 + 10;
     // const angleChange2 = Math.random() * 10 + 10;
 
+
+    // add condition for minimum branch width
+    let newBranchWidth;
+    if (branchWidth * 0.5 < .3) {
+      newBranchWidth = .3;
+    } else {
+      newBranchWidth = branchWidth * 0.5;
+    }
+
     this.drawTree(
       ctx,
       0,
       -len,
       len * 0.75,
       angle + angleChange1,
-      branchWidth * 0.5,
+      newBranchWidth,
       color1,
       color2
     );
   
+
+
     this.drawTree(
       ctx,
       0,
       -len,
       len * 0.75,
       angle - angleChange2,
-      branchWidth * 0.5,
+      newBranchWidth,
       color1,
       color2
     );

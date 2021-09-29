@@ -12,7 +12,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
 }
 
 .header-div {
@@ -23,21 +22,24 @@ body {
 
 .description,
 .instructions {
-  border: 1px solid white;
   padding: 0px 20px;
   border-radius: 10px;
   cursor: pointer;
 }
 
+.main-container {
+  display: flex;
+  gap: 10px;
+}
+
 #canvas {
-  position: absolute;
   bottom: 0;
   width: 60%;
-  height: 90%;
+  height: 100%;
 }
 
 .right-side-div-container {
-  height: 75vh;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,7 +54,6 @@ body {
 }
 
 .tree-input-div {
-  margin-right: 15%;
   top: 50%;
   display: flex;
   flex-direction: column;

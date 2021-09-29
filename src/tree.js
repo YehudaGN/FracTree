@@ -16,7 +16,8 @@ class Tree {
     let leafColor = document.getElementById('leaf-color');
     let branchAngleSlider = document.getElementById('angle-slider');
 
-    this.len = branchLengthSlider.value;
+    this.len = parseInt(branchLengthSlider.value);
+    // debugger
     this.color1 = treeColor.value;
     this.branchWidth = widthSlider.value;
     this.color2 = leafColor.value;
@@ -63,13 +64,22 @@ class Tree {
     //   requestAnimationFrame(() => {
     //right side
 
+    // add randomness to width shrink?
+
+    let newBranchWidth;
+    if (branchWidth * 0.5 < .3) {
+      newBranchWidth = .3;
+    } else {
+      newBranchWidth = branchWidth * 0.5;
+    }
+
     this.drawTree(
       ctx,
       0,
       -len,
       len * 0.75,
       angle + rightBranchAngle,
-      branchWidth * 0.5,
+      newBranchWidth,
       color1,
       color2
     );
@@ -81,7 +91,7 @@ class Tree {
       -len,
       len * 0.75,
       angle - leftBranchAngle,
-      branchWidth * 0.5,
+      newBranchWidth,
       color1,
       color2
     );

@@ -9,7 +9,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  // margin-top: 30px;
 }
 
 .header-div {
@@ -21,22 +21,28 @@ body {
 
 .description,
 .instructions {
-  border: 1px solid white;
+  // border: 1px solid white;
   padding: 0px 20px;
   border-radius: 10px;
   cursor: pointer;
 }
 
+.main-container {
+  display: flex;
+  // border: 1px solid;
+  gap: 10px;
+}
+
 #canvas {
-  position: absolute;
+  // position: absolute;
   bottom: 0;
-  //   border: 1px solid red;
+    // border: 1px solid red;
   width: 60%;
-  height: 90%;
+  height: 100%;
 }
 
 .right-side-div-container {
-  height: 75vh;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,7 +59,7 @@ margin-top: 5%;
 
 .tree-input-div {
   // position: absolute;
-  margin-right: 15%;
+  // margin-right: 5%;
   top: 50%;
   display: flex;
   flex-direction: column;

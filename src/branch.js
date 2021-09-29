@@ -24,7 +24,8 @@ class Branch {
     this.ctx.translate(this.startX, this.startY);
     this.ctx.rotate((this.angle * Math.PI) / 180);
     this.ctx.moveTo(0, 0);
-    this.ctx.lineTo(0, -this.len);
+    // add button for straight line tree vs quadratic curve?
+    // this.ctx.lineTo(0, -this.len);
 
     this.ctx.quadraticCurveTo(10, -this.len / 2, 0, -this.len);
 
