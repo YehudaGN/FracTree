@@ -20,7 +20,7 @@ In addition, the following is included:
 
 # 3. Wireframes
 
-![js_wireframe](https://user-images.githubusercontent.com/84539591/136462563-8b2b4c50-e462-45bf-ae18-a7e33e45f2bd.png)
+![js_wireframe](https://user-images.githubusercontent.com/84539591/136573198-01357985-3740-479e-abad-46a78c1429e8.png)
 
 # 4. Technologies
 
