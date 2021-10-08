@@ -1,52 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src='./dist/main.js'></script>
-    <link rel="stylesheet" href="./dist/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./dist/main.js"></script>
+    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="./src/assets/tree-favicon.png" />
     <title>FracTree</title>
-</head>
-<body>
-    <canvas id='canvas'></canvas>
-    <form action="">
-        <!-- stuff for manipulating tree -->
-        <label for="width-slider">Branch Width</label>
-        <input id='width-slider' type="range" min="1" max='150'>
+  </head>
+  <body>
+    <div class="header-div-container">
+      <div class="header-div">
+        <div class="description">
+          <p>Description</p>
+        </div>
+        <div class="instructions">
+          <p>Instructions</p>
+        </div>
+      </div>
+    </div>
 
-        <label for="branch-length-slider">Branch Length</label>
-        <input id='branch-length-slider' type="range" min="30" max='180'>
+    <canvas id="canvas"></canvas>
+    <div class="right-side-div-container">
+        <div class="links-div-container">
+            <div>
+                Github
+            </div>
+            <div>
+                LinkedIn
+            </div>
+            <div>
+                Personal Site
+            </div>
+        </div>
+      <div class="tree-input-div">
+        <label for="width-slider"
+          >Branch Width
+          <input id="width-slider" type="range" min="1" max="150" />
+        </label>
 
-        <label for="angle-slider">Initial Trunk Angle</label>
-        <input id='angle-slider' type="range" min="0" max='150' value='0'>
+        <label for="branch-length-slider"
+          >Branch Length
+          <input id="branch-length-slider" type="range" min="30" max="195" />
+        </label>
 
-        <label for="left-branch-angle-slider">Left Branch Angle</label>
-        <input id='left-branch-angle-slider' type="range" min="10" max='20' value='10'>
+        <label for="angle-slider"
+          >Tree Angle
+          <input id="angle-slider" type="range" min="0" max="25" value="0" />
+        </label>
 
-        <label for="right-branch-angle-slider">Right Branch Angle</label>
-        <input id='right-branch-angle-slider' type="range" min="10" max='20' value='10'>
+        <label for="left-branch-angle-slider"
+          >Left Branch Angle
+          <input
+            id="left-branch-angle-slider"
+            type="range"
+            min="5"
+            max="50"
+          />
+        </label>
 
-        <label for="tree-color">Tree Color</label>
-        <input id='tree-color' type="color">
+        <label for="right-branch-angle-slider"
+          >Right Branch Angle
+          <input
+            id="right-branch-angle-slider"
+            type="range"
+            min="5"
+            max="50"
+          />
+        </label>
 
-        <label for="leaf-color">Leaf Color</label>
-        <input id='leaf-color' type="color">
+        <label for="tree-color"
+          >Tree Color
+          <input id="tree-color" type="color" value="#b33c00" />
+        </label>
 
-        <label for="leaf-fullness">Leaf Fullness</label>
-        <input id='leaf-fullness' type="range" min="2" max='8'>
+        <label for="leaf-color"
+          >Leaf Color
+          <input id="leaf-color" type="color" value="#1aff1a" />
+        </label>
 
-        <label for="leaf-size">Leaf Size</label>
-        <input id='leaf-size' type="range" min="1" max='20'>
+        <label for="leaf-fullness"
+          >Leaf Fullness
+          <input id="leaf-fullness" type="range" min="2" max="8" />
+        </label>
 
-        <label for="glow-color">Glow Color</label>
-        <input id='glow-color' type="color">
+        <label for="leaf-size"
+          >Leaf Size
+          <input id="leaf-size" type="range" min="0" max="20" />
+        </label>
 
-        <label for="glow-strength">Glow Strength</label>
-        <input id='glow-strength' type="range" min="0" max='30'>
-    </form>
+        <label for="glow-color"
+          >Glow Color
+          <input id="glow-color" type="color" value="#ffff1a" />
+        </label>
+
+        <label for="glow-strength"
+          >Glow Strength
+          <input id="glow-strength" type="range" min="0" max="20" value="10" />
+        </label>
+      </div>
+    </div>
     <button class="generate-tree-button">Generate Tree</button>
     <button class="generate-random-tree-button">Generate Random Tree</button>
-</body>
+  </body>
 </html>

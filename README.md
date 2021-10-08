@@ -29,7 +29,7 @@ This project uses Vanilla JS and Canvas.
 # 5. Implementation Timeline
 
 
-Friday Afternoon & Weekend  10/10/21 -- I will have a clear plan on what I need to do and will have a code on the page as well as a canvas loaded.
+Friday Afternoon & Weekend  10/10/21 -- I will have a clear plan on what I need to do and will have code on the page as well as a canvas loaded.
 
 Monday - 10/11/21 - I will have working generation of the tree.
 

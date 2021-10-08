@@ -8,19 +8,19 @@ class Tree {
 
     this.startX = this.canvas.width / 2;
     this.startY = this.canvas.height - 150
-    this.angle = 0;
+    // this.angle = 0;
     
     let widthSlider = document.getElementById('width-slider');
-    this.branchWidth = widthSlider.value;
-
     let branchLengthSlider = document.getElementById('branch-length-slider');
-    this.len = branchLengthSlider.value;
     let treeColor = document.getElementById('tree-color');
-    this.color1 = treeColor.value;
     let leafColor = document.getElementById('leaf-color');
+    let branchAngleSlider = document.getElementById('angle-slider');
+
+    this.len = branchLengthSlider.value;
+    this.color1 = treeColor.value;
+    this.branchWidth = widthSlider.value;
     this.color2 = leafColor.value;
-    // let branchAngleSlider = document.getElementById('angle-slider');
-    // this.angle = branchAngleSlider.value;
+    this.angle = parseInt(branchAngleSlider.value);
 
     this.genTree();
   }
@@ -62,6 +62,7 @@ class Tree {
   
     //   requestAnimationFrame(() => {
     //right side
+
     this.drawTree(
       ctx,
       0,
