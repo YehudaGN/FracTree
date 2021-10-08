@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='./dist/main.js'></script>
+    <link rel="stylesheet" href="./dist/main.css">
+    <title>FracTree</title>
+</head>
+<body>
+    <canvas id='canvas'></canvas>
+    <form action="">
+        <!-- stuff for manipulating tree -->
+        <label for="width-slider">Branch Width</label>
+        <input id='width-slider' type="range" min="1" max='150'>
+
+        <label for="branch-length-slider">Branch Length</label>
+        <input id='branch-length-slider' type="range" min="30" max='180'>
+
+        <label for="angle-slider">Initial Trunk Angle</label>
+        <input id='angle-slider' type="range" min="0" max='150' value='0'>
+
+        <label for="left-branch-angle-slider">Left Branch Angle</label>
+        <input id='left-branch-angle-slider' type="range" min="10" max='20' value='10'>
+
+        <label for="right-branch-angle-slider">Right Branch Angle</label>
+        <input id='right-branch-angle-slider' type="range" min="10" max='20' value='10'>
+
+        <label for="tree-color">Tree Color</label>
+        <input id='tree-color' type="color">
+
+        <label for="leaf-color">Leaf Color</label>
+        <input id='leaf-color' type="color">
+
+        <label for="leaf-fullness">Leaf Fullness</label>
+        <input id='leaf-fullness' type="range" min="2" max='8'>
+
+        <label for="leaf-size">Leaf Size</label>
+        <input id='leaf-size' type="range" min="1" max='20'>
+
+        <label for="glow-color">Glow Color</label>
+        <input id='glow-color' type="color">
+
+        <label for="glow-strength">Glow Strength</label>
+        <input id='glow-strength' type="range" min="0" max='30'>
+    </form>
+    <button class="generate-tree-button">Generate Tree</button>
+    <button class="generate-random-tree-button">Generate Random Tree</button>
+</body>
+</html>

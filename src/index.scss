@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 195, 255);
+}
+
+#canvas {
+  position: absolute;
+
+  width: 60%;
+  height: 100%;
+}
+
+.generate-tree-button {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  z-index: 5;
+  left: 20%;
+  padding: 10px;
+  border-radius: 50px;
+  background: red;
+  color: black;
+  font-size: 20px;
+}
+
+.generate-random-tree-button {
+    cursor: pointer;
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  z-index: 5;
+  left: 35%;
+  padding: 10px;
+  border-radius: 50px;
+  background: red;
+  color: black;
+  font-size: 20px;
+}
+
+form {
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#leaf-fullness {
+    direction: rtl;
+}
