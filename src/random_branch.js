@@ -30,9 +30,6 @@ class RandomBranch {
     grd.addColorStop(.5, color2);
     grd.addColorStop(1, color3);
     
-    // let grd = this.ctx.createRadialGradient(0,-this.len,this.width/4,this.width/2,this.len/2,this.width);
-    // grd.addColorStop(0,"red");
-    // grd.addColorStop(1,"blue");
     this.ctx.strokeStyle = grd;
 
     // glow

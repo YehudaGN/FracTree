@@ -13,10 +13,12 @@ class RandomLeaf {
  
       let randNum1 = Math.floor(Math.random() * 20) + 1;
       let randNum2 = Math.floor(Math.random() * 8) + 2;
-      this.ctx.arc(0, -this.len, randNum1, 5, Math.PI / randNum2); // can change for dif leaf shape
+      this.ctx.arc(0, -this.len, randNum1, 5, Math.PI / randNum2);
       this.ctx.fill();
       this.ctx.restore();
     }
   }
   
   export default RandomLeaf;
+
+  

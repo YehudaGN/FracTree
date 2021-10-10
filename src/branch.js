@@ -6,7 +6,17 @@ class Branch {
     this.len = len;
     this.angle = angle;
     this.width = width;
-    this.color = color;
+
+    this.color = this.ctx.createLinearGradient(
+      0,
+      -this.len,
+      this.width,
+      this.len / 4
+    );
+    this.color.addColorStop(0, color[0].value);
+    this.color.addColorStop(0.5, color[1].value);
+
+    // this.color = color;
     this.drawBranch();
   }
 
@@ -24,10 +34,10 @@ class Branch {
     this.ctx.translate(this.startX, this.startY);
     this.ctx.rotate((this.angle * Math.PI) / 180);
     this.ctx.moveTo(0, 0);
-    // add button for straight line tree vs quadratic curve?
-    // this.ctx.lineTo(0, -this.len);
 
-    this.ctx.quadraticCurveTo(10, -this.len / 2, 0, -this.len);
+    // this.ctx.lineTo(0, -this.len);
+    let curveAmount = document.getElementById("curve-amount").value;
+    this.ctx.quadraticCurveTo(curveAmount, -this.len / 2, 0, -this.len);
 
     this.ctx.stroke();
   }

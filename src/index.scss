@@ -15,16 +15,35 @@ body {
 .header-div {
   width: 80%;
   display: flex;
-  gap: 10px;
+  justify-content: space-around;
+  margin-top: 5px;
   // border: 1px solid;
 }
 
+.details-instructions,
+.links {
+  display: flex;
+  gap: 10px;
+}
+
 .description,
-.instructions {
+.instructions,
+.link-container {
   border: 1px solid white;
   padding: 0px 20px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  text-align: center;
+  color: white;
 }
 
 .main-container {
@@ -34,35 +53,28 @@ body {
 }
 
 #canvas {
-  // position: absolute;
   bottom: 0;
-    // border: 1px solid red;
+  // border: 1px solid red;
   width: 60%;
   height: 100%;
 }
 
-.right-side-div-container {
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-//   border: 1px solid;
-}
-
-.links-div-container {
-margin-top: 5%;
-  margin-right: 30%;
-  display: flex;
-  flex-direction: column;
-}
-
 .tree-input-div {
-  // position: absolute;
-  // margin-right: 5%;
-  top: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.input-text {
+  align-self: center;
+  font-size: 22px;
+  margin: 0;
 }
 
 .generate-random-tree-button {
@@ -99,14 +111,15 @@ margin-top: 5%;
   box-shadow: 0px 0px 50px -10px rgb(0, 255, 234);
 }
 
-#leaf-fullness {
+#leaf-fullness,
+#branch-shrink {
   direction: rtl;
 }
 
 input[type="color"] {
-  -webkit-appearance: none;
-  border: none;
-  box-sizing: content-box;
+//   -webkit-appearance: none;
+  border: 1px solid white;
+//   box-sizing: content-box;
   width: 30px;
   padding: 0;
 }
@@ -129,9 +142,10 @@ label {
 
 input[type="range"] {
   width: 250px;
-  height: 20px;
+  height: 15px;
   -webkit-appearance: none;
   background: rgb(0, 217, 255);
+  border-radius: 10px;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
@@ -146,8 +160,8 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: #ac00f0;
   cursor: pointer;
 }

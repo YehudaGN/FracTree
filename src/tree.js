@@ -7,26 +7,31 @@ class Tree {
     this.canvas = canvas;
 
     this.startX = this.canvas.width / 2;
-    this.startY = this.canvas.height - 150
+    this.startY = this.canvas.height - 150;
     // this.angle = 0;
-    
-    let widthSlider = document.getElementById('width-slider');
-    let branchLengthSlider = document.getElementById('branch-length-slider');
-    let treeColor = document.getElementById('tree-color');
-    let leafColor = document.getElementById('leaf-color');
-    let branchAngleSlider = document.getElementById('angle-slider');
+
+    let widthSlider = document.getElementById("width-slider");
+    let branchLengthSlider = document.getElementById("branch-length-slider");
+    let treeColor = document.getElementById("tree-color");
+    let leafColor = document.getElementById("leaf-color");
+    let branchAngleSlider = document.getElementById("angle-slider");
 
     this.len = parseInt(branchLengthSlider.value);
-    // debugger
-    this.color1 = treeColor.value;
+    this.treeGradientButtons = document.querySelectorAll(
+      'input[name="tree-gradient"]'
+    );
+    let treeColor1 = document.getElementById("tree-color-1");
+    let treeColor2 = document.getElementById("tree-color-2");
+    this.treeColor = [treeColor1, treeColor2];
+    // this.treeColor = treeColor.value;
     this.branchWidth = widthSlider.value;
-    this.color2 = leafColor.value;
+    this.leafColor = leafColor.value;
     this.angle = parseInt(branchAngleSlider.value);
 
     this.genTree();
   }
 
-  genTree () {
+  genTree() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drawTree(
       this.ctx,
@@ -35,68 +40,64 @@ class Tree {
       this.len,
       this.angle,
       this.branchWidth,
-      this.color1,
-      this.color2
+      this.treeColor,
+      this.leafColor
     );
   }
 
-  drawTree(ctx, startX, startY, len, angle, branchWidth, color1, color2) {
-    new Branch(ctx, startX, startY, len, angle, branchWidth, color1);
+  drawTree(ctx, startX, startY, len, angle, branchWidth, treeColor, leafColor) {
+    new Branch(ctx, startX, startY, len, angle, branchWidth, treeColor);
 
     if (len < 10) {
-      new Leaf(ctx, len, color2);
+      new Leaf(ctx, len, leafColor);
       return;
     }
 
-    let rightBranchAngle = parseInt(document.getElementById('right-branch-angle-slider').value);
-    let leftBranchAngle = parseInt(document.getElementById('left-branch-angle-slider').value);
+    let rightBranchAngle = parseInt(
+      document.getElementById("right-branch-angle-slider").value
+    );
+    let leftBranchAngle = parseInt(
+      document.getElementById("left-branch-angle-slider").value
+    );
 
-    // const rightBranchAngle = Math.random() * 10 + 10;
-    // const leftBranchAngle = Math.random() * 10 + 10;
-    // switch (Math.floor(Math.random() * 2)) {
-    //     case 0:
-    //       angleChange = angleChange * 2;
-    //       break;
-    //     case 1:
-    //       break;
-    // }
-  
     //   requestAnimationFrame(() => {
     //right side
 
     // add randomness to width shrink?
 
     let newBranchWidth;
-    if (branchWidth * 0.5 < .3) {
-      newBranchWidth = .3;
+    if (branchWidth * 0.5 < 0.3) {
+      newBranchWidth = 0.3;
     } else {
       newBranchWidth = branchWidth * 0.5;
     }
+
+    let branchShrink = document.getElementById('branch-shrink').value;
 
     this.drawTree(
       ctx,
       0,
       -len,
-      len * 0.75,
+      len * branchShrink,
       angle + rightBranchAngle,
       newBranchWidth,
-      color1,
-      color2
+      treeColor,
+      leafColor
     );
-  
+
     //left side
     this.drawTree(
       ctx,
       0,
       -len,
-      len * 0.75,
+      len * branchShrink,
       angle - leftBranchAngle,
       newBranchWidth,
-      color1,
-      color2
+      treeColor,
+      leafColor
     );
     //   });
-  
+
     ctx.restore();
   }
 }
