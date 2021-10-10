@@ -8,8 +8,8 @@ class RandomTree {
     this.startX = this.canvas.width / 2;
     this.startY = this.canvas.height - 150
     this.angle = 0;
-    // this.len = Math.floor(Math.random() * 100) + 80;
-    this.len = Math.random() * (150 - 120) + 120;
+    // this.length = Math.floor(Math.random() * 100) + 80;
+    this.length = Math.random() * (150 - 120) + 120;
     this.branchWidth = Math.random() * 140 + 1;
     this.color1 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
@@ -26,7 +26,7 @@ class RandomTree {
       this.ctx,
       this.startX,
       this.startY,
-      this.len,
+      this.length,
       this.angle,
       this.branchWidth,
       this.color1,
@@ -34,11 +34,11 @@ class RandomTree {
     );
   }
 
-  drawTree(ctx, startX, startY, len, angle, branchWidth, color1, color2) {
-    new RandomBranch(ctx, startX, startY, len, angle, branchWidth, color1);
+  drawTree(ctx, startX, startY, length, angle, branchWidth, color1, color2) {
+    new RandomBranch(ctx, startX, startY, length, angle, branchWidth, color1);
 
-    if (len < 10) {
-      new RandomLeaf(ctx, len, color2);
+    if (length < 10) {
+      new RandomLeaf(ctx, length, color2);
       return;
     }
     const angleChange1 = Math.random() * 50 + 5;
@@ -60,8 +60,8 @@ class RandomTree {
     this.drawTree(
       ctx,
       0,
-      -len,
-      len * 0.75,
+      -length,
+      length * 0.75,
       angle + angleChange1,
       newBranchWidth,
       color1,
@@ -73,8 +73,8 @@ class RandomTree {
     this.drawTree(
       ctx,
       0,
-      -len,
-      len * 0.75,
+      -length,
+      length * 0.75,
       angle - angleChange2,
       newBranchWidth,
       color1,

@@ -1,9 +1,9 @@
 class RandomBranch {
-  constructor(ctx, startX, startY, len, angle, width, color) {
+  constructor(ctx, startX, startY, length, angle, width, color) {
     this.ctx = ctx;
     this.startX = startX;
     this.startY = startY;
-    this.len = len;
+    this.length = length;
     this.angle = angle;
     this.width = width;
     this.color = color;
@@ -25,7 +25,7 @@ class RandomBranch {
       Math.random() * 255
     })`;
 
-    let grd = this.ctx.createLinearGradient(0, -this.len, this.width, this.len);
+    let grd = this.ctx.createLinearGradient(0, -this.length, this.width, this.length);
     grd.addColorStop(0, color1);
     grd.addColorStop(.5, color2);
     grd.addColorStop(1, color3);
@@ -45,7 +45,16 @@ class RandomBranch {
     this.ctx.rotate((this.angle * Math.PI) / 180);
     this.ctx.moveTo(0, 0);
 
-    this.ctx.quadraticCurveTo(10, -this.len / 2, 0, -this.len);
+    let curveAmount = Math.random() * (15);
+    let curveSideChoose = Math.floor(Math.random() * 2);
+    switch (curveSideChoose) {
+        case 0:
+            this.ctx.quadraticCurveTo(curveAmount, -this.length / 2, 0, -this.length);
+            break;
+        case 1:
+            this.ctx.quadraticCurveTo(-curveAmount, -this.length / 2, 0, -this.length);
+            break;
+    }
 
     this.ctx.stroke();
   }
