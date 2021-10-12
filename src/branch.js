@@ -1,13 +1,13 @@
 class Branch {
-  constructor(ctx, startX, startY, length, angle, width, color) {
+  constructor(ctx, X, Y, length, angle, width, color, scale) {
     this.ctx = ctx;
-    this.startX = startX;
-    this.startY = startY;
+    this.X = X;
+    this.Y = Y;
     // debugger
     this.length = length;
     this.angle = angle;
     this.width = width;
-
+    this.scale = scale;
     this.color = this.ctx.createLinearGradient(
       0,
       -this.length,
@@ -32,15 +32,16 @@ class Branch {
     let glowStrength = document.getElementById("glow-strength");
     this.ctx.shadowBlur = glowStrength.value;
     this.ctx.lineWidth = this.width;
-    this.ctx.translate(this.startX, this.startY);
+    this.ctx.translate(this.X, this.Y);
     this.ctx.rotate((this.angle * Math.PI) / 180);
+    this.ctx.scale(this.scale, this.scale)
     this.ctx.moveTo(0, 0);
 
     // this.ctx.lineTo(0, -this.length);
     let curveAmount = document.getElementById("curve-amount").value;
     this.ctx.quadraticCurveTo(curveAmount, -this.length / 2, 0, -this.length);
-
     this.ctx.stroke();
+    // this.ctx.restore();
   }
 }
 

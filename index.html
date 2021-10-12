@@ -19,139 +19,199 @@
     <div class="header-div-container">
       <div class="header-div">
         <div class="details-instructions">
-          <div class="description">
-            <p>Description</p>
+          <div class="description" id="description">
+            <p id="desc-text">Description</p>
+            <div class="description-modal" id="description-modal">
+              <div class="description-modal-content">
+                <span id="close-desc-modal">&times;</span>
+                <p>
+                  This program is a visualization of fractal trees. A fractal is
+                  an endless simple pattern repeating itself. These trees are
+                  generated using a recursive function which continuously
+                  generates branches until the length of the branches reaches a
+                  small enough size. At this point, a function is called to
+                  generate leaves on the very last branch.
+                </p>
+
+                <p>
+                  There are over 52 billion variations of trees that can
+                  generate, not including any colors. When you include colors it
+                  gets well over the undecillions... and then I stopped
+                  counting.
+                </p>
+                <p>
+                  I hope you enjoy playing around with this program and seeing
+                  what kind of trees you can generate, random or not.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="instructions">
-            <p>Instructions</p>
+          <div class="instructions" id="instructions">
+            <p id="instr-text">Instructions</p>
+            <div class="instructions-modal" id="instructions-modal">
+              <div class="instructions-modal-content">
+                <span id="close-instr-modal">&times;</span>
+
+                <p>You can adjust the sliders on the right side of the screen to affect how the tree generates.</p>
+                <p>
+                    There are a lot of different variables that get affected so you can generate wildly different types of trees.
+                    I encourage you to mess around and see what you can create.
+                </p>
+                <p>You can also choose what color you would like the tree to be as well as choose the color of the leaves.</p>
+                <p>You can adjust the color and glow strength or even remove completely, the glow affect that generates alongside the tree.</p>
+                <p>When you are finished with your adjustments, click the "Generate Tree" button.</p>
+                <p>Alternatively, you can generate a random tree by clicking the "Generate Random Tree" button.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="links">
-          <div class="link-container"><a class='link' href="https://github.com/yudagn/FracTree">Github</a></div>
-          <div class="link-container"><a class='link' href="https://www.linkedin.com/in/yehuda-goldschein-79872199/">LinkedIn</a></div>
-          <div class="link-container"><a class='link' href="#">Personal Site</a></div>
+          <div class="link-container">
+            <a class="link" href="https://github.com/yudagn/FracTree">Github</a>
+          </div>
+          <div class="link-container">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/yehuda-goldschein-79872199/"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="link-container">
+            <a class="link" href="#">Personal Site</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="main-container">
       <canvas id="canvas"></canvas>
-        <div class="tree-input-div">
-          <div class="input-container">
-            <p class="input-text">Tree</p>
+      <div class="tree-input-div">
+        <div class="input-container">
+          <p class="input-text">Tree</p>
 
-            <label for="width-slider"
-              >Branch Width
-              <input id="width-slider" type="range" min="1" max="150" />
-            </label>
+          <label for="width-slider"
+            >Branch Width
+            <input id="width-slider" type="range" min="1" max="150" />
+          </label>
 
-            <label for="branch-length-slider"
-              >Branch Length
+          <label for="branch-length-slider"
+            >Branch Length
+            <input id="branch-length-slider" type="range" min="30" max="250" />
+          </label>
+
+          <label
+            >Branch Shrink %
+            <input
+              type="range"
+              id="branch-shrink"
+              min="0.50"
+              max="0.82"
+              step="0.01"
+            />
+          </label>
+
+          <div class="branch-shape">
+            <label
+              >Branch Curve
               <input
-                id="branch-length-slider"
                 type="range"
-                min="30"
-                max="150"
-              />
-            </label>
-
-            <label>Branch Shrink %
-                <input type="range" id="branch-shrink" min='0.50' max='0.82' step='0.01'>
-            </label>
-
-            <div class="branch-shape">
-                <label>Branch Curve
-                    <input type="range" name="" id="curve-amount" min="-60" max="60" value="0">
-                </label>
-            </div>
-
-            <label for="angle-slider"
-              >Tree Angle
-              <input
-                id="angle-slider"
-                type="range"
-                min="-25"
-                max="25"
+                name=""
+                id="curve-amount"
+                min="-60"
+                max="60"
                 value="0"
               />
             </label>
-
-            <label for="left-branch-angle-slider"
-              >Left Branch Angle
-              <input
-                id="left-branch-angle-slider"
-                type="range"
-                min="4"
-                max="50"
-              />
-            </label>
-
-            <label for="right-branch-angle-slider"
-              >Right Branch Angle
-              <input
-                id="right-branch-angle-slider"
-                type="range"
-                min="4"
-                max="50"
-              />
-            </label>
           </div>
 
-          <!-- <label for="tree-color"
+          <label for="angle-slider"
+            >Tree Angle
+            <input
+              id="angle-slider"
+              type="range"
+              min="-25"
+              max="25"
+              value="0"
+            />
+          </label>
+
+          <label for="left-branch-angle-slider"
+            >Left Branch Angle
+            <input
+              id="left-branch-angle-slider"
+              type="range"
+              min="4"
+              max="50"
+            />
+          </label>
+
+          <label for="right-branch-angle-slider"
+            >Right Branch Angle
+            <input
+              id="right-branch-angle-slider"
+              type="range"
+              min="4"
+              max="50"
+            />
+          </label>
+        </div>
+
+        <!-- <label for="tree-color"
             >Tree Color
             <input id="tree-color" type="color" value="#b33c00" />
           </label> -->
-          <div class="input-container">
-            <p class="input-text">Tree Color Gradient</p>
-            <label for="tree-color-1"
-              >Tree Color 1
-              <input type="color" id="tree-color-1" value="#ff3300" />
-            </label>
-            <label for="tree-color-2"
-              >Tree Color 2
-              <input type="color" id="tree-color-2" value="#ffffff" />
-            </label>
-          </div>
+        <div class="input-container">
+          <p class="input-text">Tree Color Gradient</p>
+          <label for="tree-color-1"
+            >Tree Color 1
+            <input type="color" id="tree-color-1" value="#ff3300" />
+          </label>
+          <label for="tree-color-2"
+            >Tree Color 2
+            <input type="color" id="tree-color-2" value="#ffffff" />
+          </label>
+        </div>
 
-          <div class="input-container">
-            <p class="input-text">Leaf</p>
-            <label for="leaf-color"
-              >Leaf Color
-              <input id="leaf-color" type="color" value="#1aff1a" />
-            </label>
+        <div class="input-container">
+          <p class="input-text">Leaf</p>
+          <label for="leaf-color"
+            >Leaf Color
+            <input id="leaf-color" type="color" value="#1aff1a" />
+          </label>
 
-            <label for="leaf-fullness"
-              >Leaf Fullness
-              <input id="leaf-fullness" type="range" min="2" max="8" />
-            </label>
+          <label for="leaf-fullness"
+            >Leaf Fullness
+            <input id="leaf-fullness" type="range" min="2" max="8" />
+          </label>
 
-            <label for="leaf-size"
-              >Leaf Size
-              <input id="leaf-size" type="range" min="0" max="20" />
-            </label>
-          </div>
+          <label for="leaf-size"
+            >Leaf Size
+            <input id="leaf-size" type="range" min="0" max="20" />
+          </label>
+        </div>
 
-          <div class="input-container">
-            <p class="input-text">Glow</p>
-            <label for="glow-color"
-              >Glow Color
-              <input id="glow-color" type="color" value="#ffff1a" />
-            </label>
+        <div class="input-container">
+          <p class="input-text">Glow</p>
+          <label for="glow-color"
+            >Glow Color
+            <input id="glow-color" type="color" value="#ffff1a" />
+          </label>
 
-            <label for="glow-strength"
-              >Glow Strength
-              <input
-                id="glow-strength"
-                type="range"
-                min="0"
-                max="20"
-                value="10"
-              />
-            </label>
-          </div>
+          <label for="glow-strength"
+            >Glow Strength
+            <input
+              id="glow-strength"
+              type="range"
+              min="0"
+              max="20"
+              value="10"
+            />
+          </label>
         </div>
       </div>
+    </div>
     <button class="generate-tree-button">Generate Tree</button>
     <button class="generate-random-tree-button">Generate Random Tree</button>
+    <button id="zoom">Zoom</button>
   </body>
 </html>
