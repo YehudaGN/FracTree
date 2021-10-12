@@ -7,7 +7,7 @@ class Tree {
     this.canvas = canvas;
     this.scale = scale;
     this.X = this.canvas.width / 2;
-    this.Y = this.canvas.height - 150;
+    this.Y = this.canvas.height - 10;
     // this.angle = 0;
 
     let widthSlider = document.getElementById("width-slider");

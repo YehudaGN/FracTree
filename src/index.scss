@@ -9,15 +9,13 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  // margin-top: 30px;
 }
 
 .header-div {
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5px;
-  // border: 1px solid;
 }
 
 .details-instructions,
@@ -33,6 +31,7 @@ body {
   padding: 0px 20px;
   border-radius: 10px;
   cursor: pointer;
+  height: 52px;
 }
 
 .description-modal,
@@ -42,13 +41,10 @@ body {
   z-index: 1;
   left: 19%;
   top: 15%;
-  // top: 30%;
   width: 40%;
-  // height: 100%;
   overflow: auto;
   background-color: gray;
   background-color: rgba(0, 0, 0, 0.397);
-  // border: 1px solid red;
 }
 
 .modal-open {
@@ -64,6 +60,17 @@ body {
 
 }
 
+.title-container {
+  height: 52px;
+}
+
+.title-h3 {
+  margin: 0%;
+  font-size: 40px;
+}
+
+
+
 .link-container {
   display: flex;
   align-items: center;
@@ -75,17 +82,21 @@ body {
   color: white;
 }
 
+.bdd {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-container {
   display: flex;
-  // border: 1px solid;
   gap: 10px;
 }
 
 #canvas {
   bottom: 0;
-  // border: 1px solid red;
   width: 60%;
   height: 100%;
+  margin-top: 5px;
 }
 
 .tree-input-div {
@@ -106,13 +117,17 @@ body {
   margin: 0;
 }
 
+
+.button-created-by-div {
+  display: flex;
+  margin-left: 200px;
+  gap: 290px;
+  align-items: flex-end;
+}
+
 .generate-random-tree-button {
   cursor: pointer;
   border: none;
-  position: absolute;
-  bottom: 5%;
-  z-index: 5;
-  left: 10%;
   height: 47px;
   padding: 10px;
   border-radius: 10px;
@@ -126,11 +141,6 @@ body {
 .generate-tree-button {
   cursor: pointer;
   border: none;
-  position: absolute;
-  bottom: 5%;
-  z-index: 5;
-  left: 38%;
-  height: 47px;
   padding: 10px;
   border-radius: 10px;
   background: rgb(255, 0, 119);

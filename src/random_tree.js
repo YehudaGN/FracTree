@@ -7,10 +7,10 @@ class RandomTree {
     this.ctx = ctx;
     this.canvas = canvas;
     this.startX = this.canvas.width / 2;
-    this.startY = this.canvas.height - 150;
+    this.startY = this.canvas.height - 10;
     this.angle = 0;
     // this.length = Math.floor(Math.random() * 100) + 80;
-    this.length = Math.random() * (150 - 120) + 120;
+    this.length = Math.random() * (220 - 120) + 120;
     this.branchWidth = Math.random() * 140 + 1;
     this.color1 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255

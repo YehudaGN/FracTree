@@ -5,7 +5,7 @@ import RandomTree from "./random_tree";
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("canvas");
   canvas.width = window.innerWidth / 1.5;
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerHeight/1.09;
 
   const ctx = canvas.getContext("2d");
   const genTreeButton = document.querySelector(".generate-tree-button");
@@ -24,12 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     new RandomTree(ctx, canvas);
   });
 
-  const zoom = document.getElementById("zoom");
-  zoom.addEventListener("click", e => {
-    e.preventDefault();
-    let scale = 0.9;
-    new Tree(ctx, canvas, scale);
-  });
+//   const zoom = document.getElementById("zoom");
+//   zoom.addEventListener("click", e => {
+//     e.preventDefault();
+//     let scale = 0.9;
+//     new Tree(ctx, canvas, scale);
+//   });
 
   let description = document.getElementById("description");
   let descText = document.getElementById("desc-text");
