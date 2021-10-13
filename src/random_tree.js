@@ -18,7 +18,7 @@ class RandomTree {
     this.color2 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
     })`;
-    
+
     this.genTree();
   }
 
@@ -43,34 +43,26 @@ class RandomTree {
     //       return};
     // new Promise(() => {
     //   setTimeout(() => {
-        new RandomBranch(
-          ctx,
-          startX,
-          startY,
-          length,
-          angle,
-          branchWidth,
-          color1
-        );
-        if (length < 10) {
-            new RandomLeaf(ctx, length, color2);
-            //   this.ctx.restore();
-            // debugger
-            // this.allGood = true;
-            return;
-          }
+    new RandomBranch(ctx, startX, startY, length, angle, branchWidth, color1);
+    if (length < 10) {
+      new RandomLeaf(ctx, length, color2);
+      //   this.ctx.restore();
+      // debugger
+      // this.allGood = true;
+      return;
+    }
     //   }, 1000);
     // })
     // .then(()=>{
 
-        // if (length < 10) {
-        //     // new RandomLeaf(ctx, length, color2);
-        //     //   this.ctx.restore();
-        //     return;
-        // }
+    // if (length < 10) {
+    //     // new RandomLeaf(ctx, length, color2);
+    //     //   this.ctx.restore();
+    //     return;
+    // }
     // })
     // .then(() => {
-      
+
     // });
     // debugger
     // might want to change this later for more consistenly beautiful trees
@@ -91,6 +83,7 @@ class RandomTree {
     } else {
       newBranchWidth = branchWidth * 0.5;
     }
+    // requestAnimationFrame(()=>{
 
     this.drawTree(
       ctx,
@@ -113,6 +106,7 @@ class RandomTree {
       color1,
       color2
     );
+    // })
     // debugger
 
     ctx.restore();
