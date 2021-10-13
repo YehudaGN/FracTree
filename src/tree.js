@@ -8,11 +8,9 @@ class Tree {
     this.scale = scale;
     this.X = this.canvas.width / 2;
     this.Y = this.canvas.height - 10;
-    // this.angle = 0;
 
     let widthSlider = document.getElementById("width-slider");
     let branchLengthSlider = document.getElementById("branch-length-slider");
-    // let treeColor = document.getElementById("tree-color");
     let leafColor = document.getElementById("leaf-color");
     let branchAngleSlider = document.getElementById("angle-slider");
 
@@ -22,7 +20,6 @@ class Tree {
     let treeColor1 = document.getElementById("tree-color-1");
     let treeColor2 = document.getElementById("tree-color-2");
     this.treeColor = [treeColor1, treeColor2];
-    // this.treeColor = treeColor.value;
     if (this.scale) {
       this.branchWidth = widthSlider.value / this.scale;
       this.length = parseInt(branchLengthSlider.value) / this.scale;
@@ -33,8 +30,6 @@ class Tree {
     this.leafColor = leafColor.value;
     this.angle = parseInt(branchAngleSlider.value);
 
-    this.branches = [];
-    this.leaves = [];
     this.genTree();
   }
 
@@ -53,13 +48,11 @@ class Tree {
   }
 
   drawTree(ctx, X, Y, length, angle, branchWidth, treeColor, leafColor) {
-    this.branches.push(
-      new Branch(ctx, X, Y, length, angle, branchWidth, treeColor, this.scale)
-    );
-    // debugger
+
+      new Branch(ctx, X, Y, length, angle, branchWidth, treeColor, this.scale);
+
     if (length < 5) {
-      this.leaves.push(new Leaf(ctx, length, leafColor));
-      // debugger
+      new Leaf(ctx, length, leafColor);
       return;
     }
 
@@ -70,10 +63,8 @@ class Tree {
       document.getElementById("left-branch-angle-slider").value
     );
 
-    //   requestAnimationFrame(() => {
     //right side
 
-    // add slider for rate of width shrinking
     let newBranchWidth;
     if (branchWidth * 0.5 < 0.3) {
       newBranchWidth = 0.3;
@@ -83,15 +74,6 @@ class Tree {
 
     let branchShrink = document.getElementById("branch-shrink").value;
 
-    // let lengthTracker = this.length
-    // let branchLengthsArray = [];
-    // while (lengthTracker  > 10) {
-    //     let currentBranchLength = lengthTracker;
-    //     branchLengthsArray.push(currentBranchLength);
-    //     lengthTracker *= branchShrink;
-    //     // debugger
-    // }
-    // requestAnimationFrame(() => {
       this.drawTree(
         ctx,
         0,
@@ -116,7 +98,6 @@ class Tree {
         treeColor,
         leafColor
       );
-    // });
     ctx.restore();
 
   }

@@ -95,9 +95,8 @@ body {
 #canvas {
   bottom: 0;
   width: 60%;
-  height: 100%;
+  // height: 100%;
   margin-top: 5px;
-  // border: 1px solid;
 }
 
 .tree-input-div {
@@ -105,14 +104,13 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 60%;
-  // border: 1px solid;
+  margin-top: 20px;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  // border: 1px solid;
 }
 
 .input-text {
@@ -124,34 +122,25 @@ body {
 
 .button-created-by-div {
   display: flex;
-  // margin-left: 200px;
-  // gap: 290px;
   align-items: flex-end;
-  // height: 47px;
   justify-content: space-around;
-  // border: 1px solid;
 }
 
 .button-div {
   display: flex;
   gap: 200px;
-  // margin-right: 100px;
 }
 
 .generate-random-tree-button {
   cursor: pointer;
   border: none;
-  // border: 1px solid red;
   height: 47px;
-  // padding: 10px 40px;
   border-radius: 10px;
   background: rgb(0, 255, 234);
   color: black;
   font-size: 20px;
   font-family: "Balsamiq Sans", cursive;
   box-shadow: 0px 0px 50px -10px rgb(255, 0, 119);
-  // text-align: center;
-  // display: flex;
   text-align: center;
   line-height: 47px;
   box-sizing: border-box;
@@ -162,7 +151,6 @@ body {
   cursor: pointer;
   border: none;
   height: 47px;
-  // padding: 10px;
   border-radius: 10px;
   background: rgb(255, 0, 119);
   color: black;
@@ -178,9 +166,7 @@ body {
 }
 
 input[type="color"] {
-//   -webkit-appearance: none;
   border: 1px solid white;
-//   box-sizing: content-box;
   width: 30px;
   padding: 0;
 }

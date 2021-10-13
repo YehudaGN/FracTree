@@ -1,34 +1,23 @@
 class RandomBranch {
-  constructor(ctx, startX, startY, length, angle, width, color) {
+  constructor(ctx, startX, startY, length, angle, width, color1, color2) {
     this.ctx = ctx;
     this.startX = startX;
     this.startY = startY;
     this.length = length;
     this.angle = angle;
     this.width = width;
-    this.color = color;
+    this.color1 = color1;
+    this.color2 = color2;
     this.drawBranch();
   }
 
   drawBranch() {
     this.ctx.beginPath();
     this.ctx.save();
-    // this.ctx.strokeStyle = this.color;
-
-    let color1 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-      Math.random() * 255
-    })`;
-    let color2 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-      Math.random() * 255
-    })`;
-    let color3 = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-      Math.random() * 255
-    })`;
 
     let grd = this.ctx.createLinearGradient(0, -this.length, this.width, this.length);
-    grd.addColorStop(0, color1);
-    grd.addColorStop(.5, color2);
-    grd.addColorStop(1, color3);
+    grd.addColorStop(0, this.color1);
+    grd.addColorStop(.5, this.color2);
     
     this.ctx.strokeStyle = grd;
 

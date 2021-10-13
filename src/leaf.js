@@ -4,6 +4,8 @@ class Leaf {
     this.length = length;
     this.color = color;
     this.drawLeaf();
+    this.x = 0;
+    this.y = -this.length;
   }
 
   drawLeaf() {
