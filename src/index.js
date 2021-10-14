@@ -1,4 +1,3 @@
-import { generateTree, drawTree } from "./tree";
 import Tree from "./tree";
 import RandomTree from "./random_tree";
 
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let instrText = document.getElementById("instr-text");
   let instructionsModal = document.getElementById("instructions-modal");
   let closeInstrModal = document.getElementById("close-instr-modal");
-  
+
   instructions.onclick = () => {
     instructionsModal.classList.toggle("modal-open");
   };

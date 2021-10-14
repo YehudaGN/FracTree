@@ -15,14 +15,9 @@ class Tree {
     let treeColor1 = document.getElementById("tree-color-1");
     let treeColor2 = document.getElementById("tree-color-2");
 
-    // this.treeGradientButtons = document.querySelectorAll(
-    //   'input[name="tree-gradient"]'
-    // );
-
     this.treeColor = [treeColor1, treeColor2];
 
     this.branchWidth = widthSlider.value;
-    debugger
     this.length = parseInt(branchLengthSlider.value);
 
     this.leafColor = leafColor.value;
@@ -81,8 +76,6 @@ class Tree {
       treeColor,
       leafColor
     );
-
-    // center
 
     //left side
     this.drawTree(
