@@ -2,10 +2,9 @@ import Branch from "./branch";
 import Leaf from "./leaf";
 
 class Tree {
-  constructor(ctx, canvas, scale) {
+  constructor(ctx, canvas) {
     this.ctx = ctx;
     this.canvas = canvas;
-    this.scale = scale;
     this.X = this.canvas.width / 2;
     this.Y = this.canvas.height - 10;
 
@@ -13,20 +12,19 @@ class Tree {
     let branchLengthSlider = document.getElementById("branch-length-slider");
     let leafColor = document.getElementById("leaf-color");
     let branchAngleSlider = document.getElementById("angle-slider");
-
-    this.treeGradientButtons = document.querySelectorAll(
-      'input[name="tree-gradient"]'
-    );
     let treeColor1 = document.getElementById("tree-color-1");
     let treeColor2 = document.getElementById("tree-color-2");
+
+    // this.treeGradientButtons = document.querySelectorAll(
+    //   'input[name="tree-gradient"]'
+    // );
+
     this.treeColor = [treeColor1, treeColor2];
-    if (this.scale) {
-      this.branchWidth = widthSlider.value / this.scale;
-      this.length = parseInt(branchLengthSlider.value) / this.scale;
-    } else {
-      this.branchWidth = widthSlider.value;
-      this.length = parseInt(branchLengthSlider.value);
-    }
+
+    this.branchWidth = widthSlider.value;
+    debugger
+    this.length = parseInt(branchLengthSlider.value);
+
     this.leafColor = leafColor.value;
     this.angle = parseInt(branchAngleSlider.value);
 
@@ -48,8 +46,7 @@ class Tree {
   }
 
   drawTree(ctx, X, Y, length, angle, branchWidth, treeColor, leafColor) {
-
-      new Branch(ctx, X, Y, length, angle, branchWidth, treeColor, this.scale);
+    new Branch(ctx, X, Y, length, angle, branchWidth, treeColor, this.scale);
 
     if (length < 5) {
       new Leaf(ctx, length, leafColor);
@@ -74,32 +71,31 @@ class Tree {
 
     let branchShrink = document.getElementById("branch-shrink").value;
 
-      this.drawTree(
-        ctx,
-        0,
-        -length,
-        length * branchShrink,
-        angle + rightBranchAngle,
-        newBranchWidth,
-        treeColor,
-        leafColor
-      );
+    this.drawTree(
+      ctx,
+      0,
+      -length,
+      length * branchShrink,
+      angle + rightBranchAngle,
+      newBranchWidth,
+      treeColor,
+      leafColor
+    );
 
-      // center
+    // center
 
-      //left side
-      this.drawTree(
-        ctx,
-        0,
-        -length,
-        length * branchShrink,
-        angle - leftBranchAngle,
-        newBranchWidth,
-        treeColor,
-        leafColor
-      );
+    //left side
+    this.drawTree(
+      ctx,
+      0,
+      -length,
+      length * branchShrink,
+      angle - leftBranchAngle,
+      newBranchWidth,
+      treeColor,
+      leafColor
+    );
     ctx.restore();
-
   }
 }
 

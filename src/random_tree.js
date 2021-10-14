@@ -9,7 +9,7 @@ class RandomTree {
     this.startY = this.canvas.height - 10;
     this.angle = 0;
     // make length smaller for smaller size screens
-    this.length = Math.random() * (220 - 120) + 120;
+    this.length = Math.random() * (200 - 120) + 120;
     this.branchWidth = Math.random() * 140 + 1;
     this.leafColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
