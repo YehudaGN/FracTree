@@ -36,6 +36,7 @@
             <div class="description-modal" id="description-modal">
               <div class="description-modal-content">
                 <span id="close-desc-modal">&times;</span>
+                <h3>Description</h3>
                 <p>
                   This program is a visualization of fractal trees. A fractal is
                   an endless simple pattern repeating itself. These trees are
@@ -63,7 +64,7 @@
             <div class="instructions-modal" id="instructions-modal">
               <div class="instructions-modal-content">
                 <span id="close-instr-modal">&times;</span>
-
+                <h3>Instructions</h3>
                 <p>
                   You can adjust the sliders on the right side of the screen to
                   affect how the tree generates.
@@ -88,11 +89,6 @@
                 <p>
                   Alternatively, you can generate a random tree by clicking the
                   "Generate Random Tree" button.
-                </p>
-                <p>
-                  (The Branch Shrink % can take a long time to run and may even
-                  crash your browser as the program works recursively and this
-                  extends how many recursive calls are made)
                 </p>
               </div>
             </div>
@@ -141,15 +137,6 @@
               />
             </label>
             
-            <label
-              >Branch Shrink %
-              <input
-                type="range"
-                id="branch-shrink"
-                min="0.60"
-                max="0.80"
-                step="0.01"
-              />
             </label>
 
             <div class="branch-shape">

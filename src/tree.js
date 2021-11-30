@@ -64,7 +64,7 @@ class Tree {
       newBranchWidth = branchWidth * 0.5;
     }
 
-    let branchShrink = document.getElementById("branch-shrink").value;
+    let branchShrink = 0.75
 
     this.drawTree(
       ctx,
