@@ -26,12 +26,24 @@ body {
 
 .description,
 .instructions,
-.link-container {
+.link {
   border: 1px solid white;
   padding: 0px 20px;
   border-radius: 10px;
   cursor: pointer;
   height: 52px;
+}
+
+.description:hover,
+.instructions:hover,
+.link:hover {
+  background: white;
+  border: 1px solid black;
+  #instr-text,
+  #desc-text,
+  .link-text {
+    color: black;
+  }
 }
 
 .description-modal,
@@ -109,13 +121,13 @@ body {
 
 
 
-.link-container {
+.link {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
-.link {
-  text-decoration: none;
+.link-text {
   text-align: center;
   color: white;
 }
