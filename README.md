@@ -1,40 +1,115 @@
-# 1. Background and Overview
+# FracTree
 
-In this vizualization, the user is able to affect the genereation of a fractal tree.
-There are sliders to change the angle, width, length, color, and depth of the fractal tree.
-There is a list of instructions on how to use the vizualizer.
+## Background and Overview
 
-# 2. Functionality and MVPs
+*[FracTree](https://yudagn.github.io/FracTree/)* is a fun visualization of fractals generated in the form of trees.
+
+## Functionality and MVPs
 
 In FracTree, the user is able to: 
 
 - Generate a fractal tree.
-- Adjust the angle, width, length, color, and depth of the fractal tree using sliders.
-- Zoom in or out
-
+- Adjust many different variables that factor into the generation of the fractal tree using sliders.
+- Generate a random fractal tree
+<img src='./src/assets/FR1.png' width='600' />
 In addition, the following is included:
 
-- A list of instructions on how to affect the tree
-- An explanation on what a fractal is and how the vizualizer works
-- A production README
+- A modal of instructions on how to affect the tree
+- A modal with an explanation on what a fractal is and how the vizualizer works
+- Personal Links
+<img src='./src/assets/FR2.png' width='600' />
 
-# 3. Wireframes
 
-![js_wireframe](https://user-images.githubusercontent.com/84539591/136573198-01357985-3740-479e-abad-46a78c1429e8.png)
+## Highlights
 
-# 4. Technologies
+The main function in the generation of the tree is a recursive function that generates the branches of the tree over and over, changing the size of the branch
+
+``` Javascript
+genTree() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.drawTree(
+      this.ctx,
+      this.X,
+      this.Y,
+      this.length,
+      this.angle,
+      this.branchWidth,
+      this.treeColor,
+      this.leafColor
+    );
+  }
+
+```
+
+``` Javascript
+drawTree(
+    ctx,
+    startX,
+    startY,
+    length,
+    angle,
+    branchWidth,
+    leafColor,
+    branchColor1,
+    branchColor2
+  ) {
+
+    new RandomBranch(
+      ctx,
+      startX,
+      startY,
+      length,
+      angle,
+      branchWidth,
+      branchColor1,
+      branchColor2
+    );
+
+    if (length < 10) {
+      new RandomLeaf(ctx, length, leafColor);
+      return;
+    }
+
+    const angleChange1 = Math.random() * 25 + 5;
+    const angleChange2 = Math.random() * 25 + 5;
+
+    let newBranchWidth;
+    if (branchWidth * 0.5 < 0.3) {
+      newBranchWidth = 0.3;
+    } else {
+      newBranchWidth = branchWidth * 0.5;
+    }
+
+      this.drawTree(
+        ctx,
+        0,
+        -length,
+        length * 0.75,
+        angle + angleChange1,
+        newBranchWidth,
+        leafColor,
+        branchColor1,
+        branchColor2
+      );
+
+      this.drawTree(
+        ctx,
+        0,
+        -length,
+        length * 0.75,
+        angle - angleChange2,
+        newBranchWidth,
+        leafColor,
+        branchColor1,
+        branchColor2
+      );
+
+      ctx.restore();
+
+  }
+
+```
+
+## Technologies
 
 This project uses Vanilla JS and Canvas.
-
-# 5. Implementation Timeline
-
-
-Friday Afternoon & Weekend  10/10/21 -- I will have a clear plan on what I need to do and will have code on the page as well as a canvas loaded.
-
-Monday - 10/11/21 - I will have working generation of the tree.
-
-Tuesday - 10/12/21 - I will have added sliders to affect some if not all of the effects of the tree
-
-Wednesday - 10/13/21 - I will style the page as well as add nav links, Instructions, and hunt down bugs
-
-Thursday Morning - 10/14/21 - The final polishing will be done.
