@@ -1,6 +1,6 @@
 # FracTree
 
-## Background and Overview
+## About
 
 *[FracTree](https://yudagn.github.io/FracTree/)* is a fun visualization of fractals generated in the form of trees.
 
