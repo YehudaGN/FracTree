@@ -26,12 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     link.download = "tree.png";
     document.body.appendChild(link);
     link.click();
-    console.log("downloading image");
   }
 
   new RandomTree(ctx, canvas);
   genTreeButton.addEventListener("click", e => {
-    console.log("generating tree");
     e.preventDefault();
     tree = new Tree(ctx, canvas);
   });
