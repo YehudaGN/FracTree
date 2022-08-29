@@ -13,8 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
     ".generate-random-tree-button"
   );
 
+  const downloadImageBtn = document.querySelector(".download-image-button");
+  downloadImageBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    downloadImage();
+  });
+
+  const downloadImage = () => {
+    let img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    let link = document.createElement("a");
+    link.href = img;
+    link.download = "tree.png";
+    document.body.appendChild(link);
+    link.click();
+    console.log("downloading image");
+  }
+
   new RandomTree(ctx, canvas);
   genTreeButton.addEventListener("click", e => {
+    console.log("generating tree");
     e.preventDefault();
     tree = new Tree(ctx, canvas);
   });
