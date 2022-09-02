@@ -8,8 +8,8 @@ class RandomTree {
     this.startX = this.canvas.width / 2;
     this.startY = this.canvas.height - 10;
     this.angle = 0;
-    // make length smaller for smaller size screens
-    this.length = Math.random() * (180 - 120) + 120;
+    // make length dynamic
+    this.length = Math.random() * (canvas.height - canvas.height / 1.05) + canvas.height / 5;
     this.branchWidth = Math.random() * 140 + 1;
     this.leafColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
       Math.random() * 255
